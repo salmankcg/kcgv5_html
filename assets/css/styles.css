@@ -11,6 +11,12 @@
 }
 
 @font-face {
+  font-family: "mediumFont";
+  src: url("../fonts/BlackerSansPro-Medium.woff2") format("woff2"),
+    url("../fonts/BlackerSansPro-Medium.woff") format("woff");
+}
+
+@font-face {
   font-family: "boldFont";
   src: url("../fonts/Blacker-Sans-Pro-Bold.woff2") format("woff2"),
     url("../fonts/Blacker-Sans-Pro-Bold.woff") format("woff");
@@ -45,7 +51,6 @@ body {
 }
 
 body {
-  background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;

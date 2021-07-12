@@ -1,1 +1,174 @@
 @import url(styles.css);
+
+header {
+    background: #fff;
+}
+
+.about .logo svg .ico path {
+    fill: #fcd572;
+}
+
+.about .logo svg .text path {
+    fill: #000
+}
+
+.about-tabs {
+    padding: 200px 0 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+}
+
+.about-tabs-sticky {
+    position: fixed;
+    width: 100%;
+    top: 40px;
+    padding: 0;
+}
+
+.nav-tabs {
+    border-bottom: 0px !important;
+}
+ 
+.nav-tabs .nav-link.active {
+    color: #000;
+    opacity: 1;
+}
+
+.nav-link {
+    padding: 0 20px !important;
+    position: relative;
+    font-family: 'boldFont';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: .4;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: #000;
+}
+
+.nav-link:hover {
+    color: #000 !important;
+    opacity: 1;
+}
+
+.map-section .title {
+    font-family: 'boldFont';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 45px;
+    line-height: 57px;
+    text-align: center;
+}
+
+.map {
+    height: 500px;
+    background: url(https://kcgv3.kingscrestglobal.com/wp-content/themes/kcg/assets/img/about-earth.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+}
+
+.map img {
+    position: absolute;
+    width: 5%;
+    box-shadow: 0px 0px 10px 0px #727272;
+    border-radius: 100%;
+    animation: animateImages 2s linear 5s infinite alternate;
+}
+
+img.image-one {
+    left: 10%;
+}
+
+img.image-two {
+    left: 20%;
+    top: 10%;
+}
+
+img.image-three {
+    left: 30%;
+    top: 50%;
+}
+
+img.image-four {
+    right: 0;
+    top: 30%;
+}
+
+img.image-five {
+    left: 80%;
+    top: 55%;
+}
+
+img.image-six {
+    bottom: 5%;
+    left: 50%;
+}
+
+img.image-seven {
+    top: 30%;
+    left: 70%;
+}
+
+img.image-eight {
+    right: 0;
+    bottom: 15%;
+}
+
+img.image-nine {
+    top: 45%;
+    left: 50%;
+}
+
+img.image-ten {
+    top: 40%;
+}
+
+section.story-section {
+    padding: 100px 0;
+}
+
+.story-section .caption {
+    font-family: 'mediumFont';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-section h3 {
+    font-family: 'regularFont';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 28px;
+    line-height: 37px;
+    text-align: right;
+}
+
+.story-section .paragraph {
+    font-family: 'lightFont';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color: #141515;
+    font-size: 20px;
+    line-height: 34px;
+}
+
+@keyframes animateImages {
+    from {
+        transform: scale(0.8)
+    }
+    top {
+        transform: scale(1.2)
+    }
+}

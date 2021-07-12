@@ -10,6 +10,15 @@ $(document).ready(function(){
           clickable: true,
         },
     });
+
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 100) {
+            $('.about-tabs').addClass('about-tabs-sticky')
+        }
+        else {
+            $('.about-tabs').removeClass('about-tabs-sticky')
+        }
+    });
   
     $('.arrow').click(function(){
         $("html, body").animate({ scrollTop: 0 }, 300);
