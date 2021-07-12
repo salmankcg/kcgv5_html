@@ -156,6 +156,54 @@ button:active::before {
 }
 /* Reset Styles */
 
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: preloader 5s linear;
+}
+
+.preloader img {
+    width: 50px;
+}
+
+@keyframes preloader {
+    0% {
+      background-color: #75D9F3;
+    }
+    25% {
+      background-color: #B27EE4;
+    }
+    50% {
+      background-color: #2D3294;
+    }
+    75% {
+      background-color: #FB6757;
+    }
+    100% {
+      background-color: #FBC759;
+    }
+}
+
+.hide-preloader {
+    z-index: -999;
+    visibility: hidden;
+}
+/* Preloader */
+
 /* Hamburger Styles */
 .offcanvas-end {
   width: 100%;
@@ -472,7 +520,62 @@ footer .arrow svg {
     transform: translate(3%, 0%);
     transition: all 0.3s ease-in-out;
 }
+
+footer .title {
+  font-size: 60px;
+  line-height: 67px;
+  font-family: "thinFont";
+  width: 70%;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  position: absolute;
+  /* transform: translate(0%, -50%); */
+  color: #fff;
+}
+
+footer .title:hover button {
+  transform: translateY(-10px);
+}
+
+.footer button {
+  position: relative;
+  font-size: 14px;
+  font-family: "boldFont";
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 30px 0 0 auto;
+  display: block;
+  z-index: 999;
+}
 /* Footer styles */
+
+@media only screen and (max-width: 1200px) {
+  .footer .title {
+    font-size: 50px;
+    line-height: 57px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .footer .title {
+    font-size: 40px;
+    line-height: 45px;
+    width: 100%;
+  }
+
+  .footer button {
+    margin-top: 10px;
+    padding: 13px 20px !important;
+  }
+}
 
 @media only screen and (max-width: 767px) {
   .swiper-pagination-bullets .swiper-pagination-bullet{
@@ -481,6 +584,22 @@ footer .arrow svg {
 
   .footer button {
     margin-top: 60px !important;
+  }
+
+  .footer button {
+    padding: 10px 20px !important;
+    font-size: 14px;
+  }
+
+  .footer .title {
+    font-size: 30px;
+    line-height: 35px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 25%;
   }
 
   /* Hamburger Styles */
@@ -567,6 +686,10 @@ footer .arrow svg {
 
   .footer_address p {
     margin-top: 5px;
+  }
+
+  .swiper-pagination  {
+    display: none !important;
   }
 }
 
