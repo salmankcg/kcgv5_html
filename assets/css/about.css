@@ -141,6 +141,10 @@ img.image-ten {
   background: #fff;
 }
 
+.client-section {
+  margin-bottom: 0;
+}
+
 .story-section .caption,
 .mission-section .caption,
 .client-section .caption {
@@ -241,22 +245,6 @@ img.image-ten {
   margin: 40px 0;
 }
 
-.review-section .swiper-slide.swiper-slide-active {
-  width: 60% !important;
-  margin-right: 0 !important;
-}
-
-.swiper-slide.swiper-slide-prev {
-  width: 20% !important;
-  transform: translateX(-30%);
-  margin-right: 0 !important;
-}
-
-.swiper-slide.swiper-slide-next {
-  width: 20% !important;
-  transform: translateX(10%);
-}
-
 .review-section .swiper-slide .info {
   opacity: 0.4;
   transition: all 0.5s ease-in-out;
@@ -318,7 +306,7 @@ img.image-ten {
 }
 
 .what-we-do-section {
-  background: #000;
+  background: #141515;
   margin: 50px 0;
   padding: 100px 0;
   color: #fff;
@@ -348,10 +336,17 @@ img.image-ten {
   margin-top: 40px;
   color: #fff !important;
   border: 1px solid #fff !important;
+  font-family: 'boldFont';
+  font-size: 14px;
 }
 
 .what-we-do-section button:hover {
-  color: #000 !important;
+  transform: skewY(-2deg) !important;
+  /* animation: buttonAnimation 1s linear infinite alternate; */
+}
+
+.what-we-do-section button::before {
+  background-color: #000;
 }
 
 .what-we-do-section img {
@@ -465,10 +460,10 @@ img.image-ten {
 
 @keyframes animateImages {
   from {
-    transform: scale(0.8);
+    transform: scale(0.4);
   }
-  top {
-    transform: scale(1.2);
+  to {
+    transform: scale(1);
   }
 }
 
@@ -489,6 +484,33 @@ img.image-ten {
 
   100% {
     transform: translateX(0%);
+  }
+}
+
+@keyframes buttonAnimation {
+  from {
+    transform: skewY(-4deg);
+  }
+  to {
+    transform: skewY(4deg);
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .review-section .swiper-slide.swiper-slide-active {
+    width: 60% !important;
+    margin-right: 0 !important;
+  }
+  
+  .swiper-slide.swiper-slide-prev {
+    width: 20% !important;
+    transform: translateX(-50%);
+    margin-right: 0 !important;
+  }
+  
+  .swiper-slide.swiper-slide-next {
+    width: 20% !important;
+    transform: translateX(50%);
   }
 }
 
@@ -548,5 +570,9 @@ img.image-ten {
   .swiper-slide.swiper-slide-prev {
     width: auto;
     transform: none;
+  }
+
+  .map img {
+    width: 8%;
   }
 }
