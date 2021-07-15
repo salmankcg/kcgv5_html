@@ -18,6 +18,7 @@ header {
   justify-content: center;
   z-index: 999;
   transition: all 0.5s ease-in-out;
+  color: #;
 }
 
 .about-tabs-sticky {
@@ -48,12 +49,20 @@ header {
   opacity: 0.4;
   background-color: transparent !important;
   border-color: transparent !important;
-  color: #000;
+  color: #000 !important;
 }
 
 .nav-link:hover {
   color: #000 !important;
   opacity: 1;
+}
+
+.text-light {
+  color: #fff !important;
+}
+
+.about-tabs .nav-tabs .nav-link:hover {
+  background-color: transparent !important;
 }
 
 .map-section,
@@ -456,6 +465,10 @@ img.image-ten {
 .case:hover h3::after {
   transition: all 0.3s ease-in-out;
   transform: scaleX(0.8);
+}
+
+.about-tabs button:hover {
+  background-color: transparent !important
 }
 
 @keyframes animateImages {
