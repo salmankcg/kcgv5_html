@@ -234,7 +234,8 @@ header main {
 }
 
 .menu a:hover {
-  transform: scale(0.7, 1);
+  /* transform: scale(0.7, 1); */
+  opacity: 0.6;
   transition: all 0.3s ease-in-out;
 }
 
@@ -293,8 +294,9 @@ ul.nav-lists li a {
 }
 
 ul.nav-lists li:hover {
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
   transition: all 0.3s ease-in-out;
+  opacity: 0.6;
 }
 
 .socials a {
@@ -307,21 +309,40 @@ ul.nav-lists li:hover {
   font-family: "boldFont";
 }
 
-.menu a:hover {
-  transform: scale(0.9);
-  transition: all 0.3s ease-in-out;
-}
-
 header .contact {
   padding: 10px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 header .contact a {
-  display: block;
+  /* display: block;   */
   text-align: right;
   font-size: 16px;
   color: #000;
   font-family: "lightFont";
+  position: relative;
+}
+
+header .contact a::after {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 1px;
+  background: #000;
+  bottom: 0;
+  left: 50%;
+  transition: all 0.3s ease;
+  transform: scaleX(0);
+}
+
+header .contact a:hover {
+  opacity: 1;
+}
+
+header .contact a:hover::after {
+  transform: scaleX(100);
 }
 
 header .location {

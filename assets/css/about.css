@@ -17,8 +17,6 @@ header {
   display: flex;
   justify-content: center;
   z-index: 999;
-  transition: all 0.5s ease-in-out;
-  color: #;
 }
 
 .about-tabs-sticky {
@@ -53,8 +51,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #000 !important;
-  opacity: 1;
+  opacity: 0.3;
 }
 
 .text-light {
@@ -91,9 +88,8 @@ header {
 .map img {
   position: absolute;
   width: 5%;
-  box-shadow: 0px 0px 10px 0px #727272;
   border-radius: 100%;
-  animation: animateImages 2s linear 5s infinite alternate;
+  animation: animateImages 2s linear 0s 3 alternate;
 }
 
 img.image-one {
@@ -215,7 +211,7 @@ img.image-ten {
 }
 
 .line .logos img {
-  margin: 10px 20px 30px;
+  margin: 30px 20px 30px;
 }
 
 .line:first-child {
@@ -350,7 +346,7 @@ img.image-ten {
 }
 
 .what-we-do-section button:hover {
-  transform: skewY(-2deg) !important;
+  transform: skewY(2deg);
   /* animation: buttonAnimation 1s linear infinite alternate; */
 }
 
@@ -361,6 +357,7 @@ img.image-ten {
 .what-we-do-section img {
   border-radius: 6px;
   transition: all 0.5s ease-in-out;
+  width: 390px;
 }
 
 .what-we-do-section img:hover {
@@ -471,6 +468,25 @@ img.image-ten {
   background-color: transparent !important
 }
 
+.about-tabs .nav-tabs .nav-link:hover,
+.about-tabs .nav-tabs .nav-link:hover {
+  transform: translateY(0) !important;
+}
+
+.about-tabs .nav-tabs .nav-link::before {
+  background-color: transparent !important;
+}
+
+img.img-ml-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+img.img-mr-auto {
+  margin-right: auto;
+  margin-left: 0;
+}
+
 @keyframes animateImages {
   from {
     transform: scale(0.4);
@@ -525,9 +541,23 @@ img.image-ten {
     width: 20% !important;
     transform: translateX(50%);
   }
+  
 }
 
 @media only screen and (max-width: 767px){
+
+  img.img-ml-auto {
+    margin: 0 auto !important;
+  }
+  
+  img.img-mr-auto {
+    margin: 0 auto !important;
+  }
+
+  .what-we-do-section img {
+    width: 100%;
+  }
+
   .col-reverse {
     flex-direction: column-reverse;
   }

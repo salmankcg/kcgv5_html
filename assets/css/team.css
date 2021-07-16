@@ -1,0 +1,25 @@
+.team-members {
+    background-color: #fff;
+    text-align: center;
+}
+
+.team-members img {
+    width: 226px;
+    height: 226px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.team-members .name {
+    font-family: 'regularFont';
+    font-size: 22px;
+    margin: 25px 0 0px;
+}
+
+.team-members .occupation {
+    font-family: 'mediumFont';
+    font-size: 14px;
+    color: rgba(0,0,0,.5);
+    margin-bottom: 40px;
+}

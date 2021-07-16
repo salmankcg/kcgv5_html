@@ -132,13 +132,15 @@ var lFollowX = 0,
     lFollowY = 0,
     x = 0,
     y = 0,
+    rotate = 0,
     friction = 1 / 30;
 
 function moveElement() {
   x += (lFollowX - x);
   y += (lFollowY - y) * friction;
+  rotate += 2 * friction;
   
-  translate = 'translate(' + x + 'px, ' + y + 'px) scale(1)';
+  translate = 'translate(' + x + 'px, ' + y + 'px) rotate(' + rotate + 'deg)';
 
   $('.animated-btn').css({
     '-webit-transform': translate,
@@ -157,4 +159,14 @@ $(window).on('mousemove click', function(e) {
   lFollowY = (10 * lMouseY) / 100;
 });
 
-moveElement();
+// moveElement();
+
+let mm = new MagnetMouse({
+    magnet: {
+      element: '.magnet',
+      distance: 2
+    }
+});
+  
+
+mm.init();
