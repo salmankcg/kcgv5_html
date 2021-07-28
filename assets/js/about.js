@@ -218,7 +218,7 @@ $(document).ready(function () {
 
     var _target = $(this).data('target');
       _name = $(this).data('name');
-      console.log(_name);
+      console.log($(this));
       _area = $(this).data('area');
     
     $itemScramble.each(function(i,e){
@@ -239,8 +239,13 @@ $(document).ready(function () {
       }
     });
 
-    _fxName.setText('_name');
-    _fxArea.setText(_area);
+    // _fxName.setText('_name');
+    // _fxArea.setText(_area);
+
+    let getName = $(".title .name");
+    let getPost = $(".title .job-title");
+    getName.text($(this).data("name"));
+    getPost.text($(this).data("area"));
     
 
   }
@@ -248,6 +253,7 @@ $(document).ready(function () {
   function mouseLeave(){
     
     var $this 	= $(this);
+    console.log($this.data('area'))
 
     $itemScramble.each(function(i,e){
       var _target = $(this).data('target');
@@ -303,6 +309,7 @@ $(document).ready(function () {
         output += from
       }
       }
+      // console.log('this: ', this);
       this.el.innerHTML = output
       if (complete === this.queue.length) {
       this.resolve()
@@ -374,54 +381,3 @@ function mouseOut(_this){
 }
 
 // initMouseMove();
-
-// Mouse Move
-
-
-
-var lFollowX = 0,
-  lFollowY = 0,
-  x = 0,
-  y = 0,
-  rotate = 0,
-  friction = 1 / 30;
-
-function moveElement() {
-  x += lFollowX - x;
-  y += (lFollowY - y) * friction;
-  rotate += 2 * friction;
-
-  translate = "translate(" + x + "px, " + y + "px) rotate(" + rotate + "deg)";
-
-  $(".animated-btn").css({
-    "-webit-transform": translate,
-    "-moz-transform": translate,
-    transform: translate,
-  });
-
-  window.requestAnimationFrame(moveElement);
-}
-
-$(window).on("mousemove click", function (e) {
-  var lMouseX = Math.max(
-    -100,
-    Math.min(100, $(window).width() / 2 - e.clientX)
-  );
-  var lMouseY = Math.max(
-    -100,
-    Math.min(100, $(window).height() / 2 - e.clientY)
-  );
-  lFollowX = (20 * lMouseX) / 100;
-  lFollowY = (10 * lMouseY) / 100;
-});
-
-// moveElement();
-
-let mm = new MagnetMouse({
-  magnet: {
-    element: ".magnet",
-    distance: 2,
-  },
-});
-
-mm.init();
