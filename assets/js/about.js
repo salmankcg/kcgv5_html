@@ -263,6 +263,11 @@ $(document).ready(function () {
       gsap.to($figure, 3, { ease: Elastic.easeOut, "clip-path": "polygon("+_arrPos[i][0]+"% 0%, "+_arrPos[i][1]+"% 0%, "+_arrPos[i][2]+"% 100%, "+_arrPos[i][3]+"% 100%)"});
       
     });
+
+    let getName = $(".title .name");
+    let getPost = $(".title .job-title");
+    getName.text('the people');
+    getPost.text('magic');
     
   }
 
