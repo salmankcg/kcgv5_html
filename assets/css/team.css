@@ -29,3 +29,96 @@
     color: rgba(0,0,0,.5);
     margin-bottom: 40px;
 }
+
+.people-scramble {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.people-scramble .wrapper {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.people-scramble .images, .people-scramble figure {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    background-size: cover;
+}
+
+figure {
+    background-size: cover;
+    background-position: center;
+    padding: 10px
+}
+
+.people-scramble .hint {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+}
+
+.people-scramble .hint .item {
+    position: relative;
+    width: 12.5%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.people-scramble .hint .item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.team-slider-section {
+    padding: 20px 0 100px
+}
+
+.team-slider-section {
+    padding: 0px 0 100px;
+}
+
+.team-slider-section .title {
+  font-size: 45px;
+  line-height: 57px;
+  font-family: 'thinFont';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.team-slider-section .title b {
+  font-family: 'boldFont';
+}
+
+.team-slider-section button {
+  border: 1px solid #000;
+  font-family: 'boldFont';
+  margin-top: 30px;
+}
+
+.team-slider-section button:hover {
+  color: #fff;
+}
+
+.team-slider-section button::before {
+  background-color: #000
+}
+
+.title .name {
+    transition: all 5s ease-in-out;
+}

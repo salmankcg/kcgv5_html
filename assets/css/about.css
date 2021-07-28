@@ -13,7 +13,7 @@ header {
 }
 
 .about-tabs {
-  padding: 200px 0 50px;
+  padding: 150px 0 50px;
   display: flex;
   justify-content: center;
   z-index: 999;
