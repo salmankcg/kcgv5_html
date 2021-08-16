@@ -199,7 +199,8 @@ $(document).ready(function () {
     if($(window).width() >= 860){
       _fxName 	= new TextScramble($name);
       _fxArea 	= new TextScramble($area);
-    
+      console.log('fxn: ', _fxName);
+      console.log('fxarea: ', _fxArea);
       // MouseMove.init($peopleList.find('.item').find('.i-wrapper'));
 
       $itemScramble.on('mouseenter',mouseEnter);
@@ -220,7 +221,8 @@ $(document).ready(function () {
       _name = $(this).data('name');
       console.log($(this));
       _area = $(this).data('area');
-    
+    console.log('_name: ', _name);
+    console.log('itemScramble', $itemScramble);
     $itemScramble.each(function(i,e){
       
       var $figure = $peopleScramble.find('.wrapper').find('figure').eq(i);
@@ -239,13 +241,13 @@ $(document).ready(function () {
       }
     });
 
-    // _fxName.setText('_name');
-    // _fxArea.setText(_area);
+     _fxName.setText(_name);
+     _fxArea.setText(_area);
 
-    let getName = $(".title .name");
-    let getPost = $(".title .job-title");
-    getName.text($(this).data("name"));
-    getPost.text($(this).data("area"));
+//    let getName = $(".title .name");
+//    let getPost = $(".title .job-title");
+//    getName.text($(this).data("name"));
+//    getPost.text($(this).data("area"));
     
 
   }
@@ -281,6 +283,7 @@ $(document).ready(function () {
 
     setText(newText) {
       const oldText = $(".title .name")
+      console.log('oldText: ', oldText)
       const length 	= Math.max(oldText.length, newText.length)
       const promise = new Promise((resolve) => this.resolve = resolve)
       this.queue = []
@@ -293,10 +296,10 @@ $(document).ready(function () {
       }
       cancelAnimationFrame(this.frameRequest)
       this.frame = 0
-      this.update()
+      this.update(oldText)
       return promise
     }
-    update() {
+    update(oldText) {
       let output = ''
       let complete = 0
       for (let i = 0, n = this.queue.length; i < n; i++) {
@@ -314,8 +317,9 @@ $(document).ready(function () {
         output += from
       }
       }
-      // console.log('this: ', this);
-      this.el.innerHTML = output
+      console.log('output on update', output)
+      console.log('this on update: ', this);
+      oldText.innerHTML = output
       if (complete === this.queue.length) {
       this.resolve()
       } else {
